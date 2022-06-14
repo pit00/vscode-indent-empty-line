@@ -1,9 +1,9 @@
 {
-  "name": "vscode-implicit-indent",
-  "displayName": "implicit-indent",
-  "description": "When the cursor moves to an empty line, automatically indent to the correct level.",
-  "publisher": "jemc",
-  "repository": "https://github.com/jemc/vscode-implicit-indent",
+  "name": "vscode-indent-empty-line",
+  "displayName": "indent-empty-line",
+  "description": "Indent a empty line to the correct level.",
+  "publisher": "pit00",
+  "repository": "https://github.com/pit00/vscode-indent-empty-line",
   "version": "1.1.1",
   "engines": {
     "vscode": "^1.37.0"
@@ -13,19 +13,19 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:implicit-indent.trigger"
+    "onCommand:indent-empty-line.trigger"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "implicit-indent.trigger",
-        "title": "Trigger Implicit Indent"
+        "command": "indent-empty-line.trigger",
+        "title": "Trigger Indent"
       }
     ],
     "keybindings": [
       {
-        "command": "implicit-indent.trigger",
+        "command": "indent-empty-line.trigger",
         "key": "ctrl ctrl",
         "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible && !parameterHintsVisible"
       }
@@ -46,6 +46,6 @@
     "typescript": "^4.2.2"
   },
   "dependencies": {
-    "async-mutex": "^0.3.1"
+    "async-mutex": "^0.3.2"
   }
 }

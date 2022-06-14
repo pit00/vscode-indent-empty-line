@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { Mutex } from "async-mutex";
-import { Position, TextEditorSelectionChangeEvent } from "vscode";
+import { Position } from "vscode";
 
 export declare let previous_line_number_from_click: number | undefined;
 export declare let lock: Mutex;
@@ -16,8 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
     lock = new Mutex();
   }
 
-  // Define some movement commands, registered with the implicit-indent prefix.
-  const name = `implicit-indent.trigger`;
+  const name = `indent-empty-line.trigger`;
   const disposable = vscode.commands.registerCommand(name, async () => {
     // Get the cursor's current line and check if it is empty.
     const editor = vscode.window.activeTextEditor!;
