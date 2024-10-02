@@ -1,51 +1,52 @@
 {
-  "name": "vscode-indent-empty-line",
-  "displayName": "indent-empty-line",
-  "description": "Indent a empty line to the correct level.",
-  "publisher": "pit00",
-  "repository": "https://github.com/pit00/vscode-indent-empty-line",
-  "version": "1.1.1",
-  "engines": {
-    "vscode": "^1.37.0"
-  },
-  "categories": [
-    "Formatters",
-    "Other"
-  ],
-  "activationEvents": [
-    "onCommand:indent-empty-line.trigger"
-  ],
-  "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "indent-empty-line.trigger",
-        "title": "Trigger Indent"
-      }
+    "name": "vscode-indent-empty-line",
+    "displayName": "Indent Current Line",
+    "description": "Indent a line to the correct level.",
+    "publisher": "pit00",
+    "repository": "https://github.com/pit00/vscode-indent-empty-line",
+    "version": "1.2.0",
+    "engines": {
+        "vscode": "^1.37.0"
+    },
+    "icon": "icon.png",
+    "categories": [
+        "Formatters",
+        "Other"
     ],
-    "keybindings": [
-      {
-        "command": "indent-empty-line.trigger",
-        "key": "ctrl ctrl",
-        "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible && !parameterHintsVisible"
-      }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "lint": "eslint . --ext .ts,.tsx"
-  },
-  "devDependencies": {
-    "@types/node": "^12.12.0",
-    "@types/vscode": "^1.33.0",
-    "@typescript-eslint/eslint-plugin": "^4.16.0",
-    "@typescript-eslint/parser": "^4.16.0",
-    "eslint": "^7.21.0",
-    "typescript": "^4.2.2"
-  },
-  "dependencies": {
-    "async-mutex": "^0.3.2"
-  }
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "indent-empty-line.trigger",
+                "title": "Trigger Indent"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "indent-empty-line.trigger",
+                "key": "ctrl ctrl",
+                "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible && !parameterHintsVisible"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "lint": "eslint . --ext .ts,.tsx"
+    },
+    "devDependencies": {
+        "@types/node": "^12.12.0",
+        "@types/vscode": "^1.33.0",
+        "@typescript-eslint/eslint-plugin": "^4.16.0",
+        "@typescript-eslint/parser": "^4.16.0",
+        "eslint": "^7.21.0",
+        "typescript": "^4.2.2"
+    },
+    "dependencies": {
+        "async-mutex": "^0.3.2"
+    }
 }
