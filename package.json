@@ -4,7 +4,7 @@
     "description": "Indent a line to the correct level.",
     "publisher": "pit00",
     "repository": "https://github.com/pit00/vscode-indent-empty-line",
-    "version": "1.2.0",
+    "version": "1.2.12",
     "engines": {
         "vscode": "^1.37.0"
     },

@@ -59,9 +59,13 @@ async function executePrevIndent(
         }
         else{
             let spaces = cursorLineText.match(/^\s*/)![0]
-            editor.edit((edit) => {
-                edit.replace(new vscode.Range(cursorPos.line, 0, cursorPos.line, spaces.length), prevLineIndent)
-            });
+            
+            // Tolerance
+            if (Math.abs(prevLineIndent.length - spaces.length) > 4){
+                editor.edit((edit) => {
+                    edit.replace(new vscode.Range(cursorPos.line, 0, cursorPos.line, spaces.length), prevLineIndent)
+                });
+            }
         }
         
     } finally {
